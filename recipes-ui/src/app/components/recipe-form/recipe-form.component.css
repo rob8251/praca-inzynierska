@@ -1,0 +1,54 @@
+.error {
+    color: red;
+    text-align: center;
+  }
+  
+  section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .recipe-form {
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  mat-form-field {
+    margin-bottom: 10px;
+  }
+  
+  mat-error {
+    display: none;
+  }
+  
+  mat-error:first-child {
+    display: block;
+  }
+  
+  .removeIngredientButton {
+    margin-left: 1em;
+  }
+  
+  .addIngredientButton {
+    margin-bottom: 2em;
+  }
+
+  .measurement-field {
+    max-width: 10px;
+  }
+
+  button {
+    margin-bottom: 20px;
+  }

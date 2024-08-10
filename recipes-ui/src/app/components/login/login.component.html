@@ -1,0 +1,27 @@
+<section>
+    <h1>Logowanie</h1>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+      <mat-form-field appearance="outline">
+        <mat-label for="username">Login</mat-label>
+        <input matInput id="username" type="text" formControlName="username">
+        <mat-icon matSuffix>person_outline</mat-icon>
+        @if (loginForm.controls['username'].errors?.['required']) {
+          <mat-error>Login nie może być pusty</mat-error>
+        }
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label for="password">Hasło</mat-label>
+        <input matInput id="password" type="password" formControlName="password">
+        <mat-icon matSuffix>lock</mat-icon>
+        @if (loginForm.controls['password'].errors?.['required']) {
+          <mat-error>Hasło nie może być puste</mat-error>
+        }
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Zaloguj</button>
+  
+    </form>
+</section>

@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="review-form__input">
+      <label for="rating">Ocena (1-5):</label>
+      <input type="number" min="1" max="5" id="rating" required>
+    </div>
+    <div class="review-form__input">
+      <label for="content">Treść opinii:</label>
+      <textarea id="content" required></textarea>
+    </div>
+    <button type="submit">Dodaj opinię</button>
+  </form>

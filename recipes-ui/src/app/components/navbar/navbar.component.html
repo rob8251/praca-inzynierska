@@ -1,0 +1,29 @@
+<mat-toolbar class="mat-elevation-z8" color="primary" role="heading">
+    <button routerLink="/" mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+    <h1><a class="title-link" routerLink="/">Serwis z przepisami</a></h1>
+    <span class="menu-spacer"></span>
+  
+    <button mat-raised-button routerLink="/favourite-recipes">
+      <mat-icon>favorite_border</mat-icon>Ulubione
+    </button>
+  
+    <button mat-raised-button routerLink="/recipes">
+      <mat-icon>filter_none</mat-icon>Lista przepisów
+    </button>
+  
+    <button mat-raised-button routerLink="/add-recipe">
+      <mat-icon>add_circle_outline</mat-icon>Dodaj przepis
+    </button>
+  
+    @if (userService.isAuthenticated()) {
+      <button mat-raised-button routerLink="/" (click)="userService.userLogout()" color="accent">
+        <mat-icon>exit_to_app</mat-icon>Wyloguj się
+      </button>
+    } @else {
+      <button mat-raised-button routerLink="/login" color="accent">
+        <mat-icon>person_outline</mat-icon>Zaloguj się
+      </button>
+    }
+</mat-toolbar>

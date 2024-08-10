@@ -1,0 +1,123 @@
+<section>
+    @if (categories) {
+    <div class="recipe-form">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label for="name">Nazwa przepisu: </mat-label>
+                <input matInput id="name" type="text" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label for="description">Krótki opis przepisu:</mat-label>
+                <textarea matInput id="description" type="text" formControlName="description" rows="3"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label for="prepTimeMinutes">Czas przygotowania:</mat-label>
+                <input matInput id="prepTimeMinutes" type="number" formControlName="prepTimeMinutes">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label for="servings">Porcje:</mat-label>
+                <input matInput id="servings" type="number" formControlName="servings">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Kategoria</mat-label>
+                <mat-select formControlName="category">
+                  @for (category of categories; track category) {
+                    <mat-option [value]="category.id">{{category.name}}</mat-option>
+                  }
+                </mat-select>
+            </mat-form-field>
+
+              <div formArrayName="ingredientsArray">
+                @for (ingredient of ingredients.controls; track $index) {
+                <div [formGroupName]="$index">
+                  <span>Składnik {{$index+1}}: </span>
+        
+                  <!-- <mat-form-field appearance="outline">
+                    <mat-label for="ingredient">Nazwa składnika {{$index+1}}:</mat-label>
+                    <input matInput type="text" formControlName="ingredient">
+                    @if (ingredient.get('ingredient')?.errors?.['required']) {
+                      <mat-error>Składnik jest wymagany.</mat-error>
+                    }
+                    @if (ingredient.get('ingredient')?.errors?.['minlength']) {
+                      <mat-error>Minimum {{ ingredient.get('ingredient')?.errors?.['minlength'].requiredLength }} znaków</mat-error>
+                    }
+                  </mat-form-field> -->
+
+                  <!-- <mat-form-field>
+                    <mat-label for="ingredient">Nazwa składnika {{$index+1}}:</mat-label>
+                    <input type="text" matInput formControlName="ingredient" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                      @for (ingredient of allIngredients; track ingredient) {
+                        <mat-option [value]="ingredient.id">{{ingredient.name}}</mat-option>
+                      }
+                    </mat-autocomplete>
+                  </mat-form-field> -->
+
+                  <mat-form-field>
+                    <mat-label for="ingredient">Nazwa składnika {{$index+1}}:</mat-label>
+                    <mat-select formControlName="ingredient">
+                      @for (ingredient of allIngredients; track ingredient) {
+                        <mat-option [value]="ingredient.id">{{ingredient.name}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+
+                  <span>Ilość: </span>
+                  <mat-form-field>
+                    <mat-label for="quantity">Ilość</mat-label>
+                    <input type="number" matInput formControlName="quantity">
+                  </mat-form-field>
+
+                  <span>Miara: </span>
+                  <mat-form-field>
+                    <mat-label>Miara</mat-label>
+                    <mat-select formControlName="measurement">
+                      @for (measurement of allMeasurements; track measurement) {
+                        <mat-option [value]="measurement.id">{{measurement.abbreviation}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+
+                  <button mat-raised-button color="warn" class="removeIngredientButton" (click)="lessIngredients($index)">Usuń składnik</button>
+                </div> }
+              </div>
+              <button class="addIngredientButton" mat-raised-button color="accent" [disabled]="hasIngredientErrors()" type="button" (click)="moreIngredients()" >Dodaj składnik</button><br/>
+
+              <div formArrayName="stepsArray">
+                @for (step of steps.controls; track $index) {
+                <div [formGroupName]="$index">
+                  <span>Krok {{$index+1}}: </span>
+                  <mat-form-field appearance="outline" style="width: 600px;">
+                    <mat-label for="step">Opis kroku {{$index+1}}:</mat-label>
+                    <textarea matInput type="text" formControlName="step" rows="3" cols="200"></textarea>
+                    @if (step.get('step')?.errors?.['required']) {
+                      <mat-error>Krok jest wymagany.</mat-error>
+                    }
+                    @if (step.get('step')?.errors?.['minlength']) {
+                      <mat-error>Minimum {{ step.get('step')?.errors?.['minlength'].requiredLength }} znaków</mat-error>
+                    }
+                  </mat-form-field>
+                  <button mat-raised-button color="warn" class="removeStepButton" (click)="lessSteps($index)">Usuń krok</button>
+                </div> }
+              </div>
+              <button class="addStepButton" mat-raised-button color="accent" type="button" (click)="moreSteps()">Dodaj krok</button><br/>
+
+              <!-- <button mat-raised-button color="primary" [disabled]="!recipeForm.valid" type="submit">
+                Dodaj przepis
+              </button> -->
+              <button mat-raised-button color="primary" [disabled]="!recipeForm.valid" type="submit">
+                @if (recipeToEdit) {
+                  Edytuj
+                }
+                @else {
+                  Dodaj
+                }
+              </button>
+        </form>
+    </div>
+    }
+</section>

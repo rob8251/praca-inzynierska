@@ -1,0 +1,8 @@
+<section>
+    <div class="home-page">
+        <h1>Lista przepisow</h1>
+        @for (recipe of recipes; track recipe) {
+            <app-recipe-list-element [recipe]="recipe"></app-recipe-list-element>
+        }
+    </div>
+</section>

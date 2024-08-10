@@ -1,0 +1,115 @@
+<!-- <section>
+    @if (recipe) {
+    <div class="recipe-details">
+        <div class="recipe-details__header">
+            <h1>{{recipe.name}}</h1>
+            <p>{{recipe.description}}</p>
+        </div>
+        <div class="recipe-details__info">
+            <div class="recipe-details__info__item">
+                <mat-icon>schedule</mat-icon>
+                <span>{{recipe.prepTimeMinutes}} min</span>
+            </div>
+            <div class="recipe-details__info__item">
+                <mat-icon>restaurant</mat-icon>
+                <span>Porcje: {{recipe.servings}}</span>
+            </div>
+            <div class="recipe-details__info__item">
+                <mat-icon>category</mat-icon>
+                <span>{{recipe.category.name}}</span>
+            </div>
+        </div>
+        <div class="recipe-details__ingredients">
+            <h2>Składniki</h2>
+            <ul>
+                @for (ingredient of recipe.ingredients; track $index) {
+                    <li>{{ingredient.ingredientName}} - {{ingredient.amount}} {{ingredient.measurementAbbr}}</li>
+                }
+            </ul>
+        </div>
+        <div class="recipe-details__steps">
+            <h2>Przygotowanie</h2>
+                @for (step of recipe.steps; track $index) {
+                    <p>{{step.stepNumber}}. {{step.description}}</p>
+                }
+        </div>
+        
+        <div id="recipeButtons">
+            @if (recipe) {
+              @if (userService.isAuthenticated()) {
+                <button class="recipeButton" mat-raised-button [routerLink]="['/recipe', recipe.id, 'edit']">Edytuj przepis</button>
+                <app-delete-recipe [recipe]="recipe" class="recipeButton"></app-delete-recipe>
+              }
+            }
+          </div>
+    </div>
+    }
+</section> -->
+
+
+<section>
+    @if (recipe) {
+      <div class="recipe-details">
+        <div class="recipe-details__header">
+          <h1>{{ recipe.name }}</h1>
+          <p>{{ recipe.description }}</p>
+          <app-recipe-rating [recipe]="recipe"></app-recipe-rating>
+        </div>
+        <div class="recipe-details__info">
+          <div class="recipe-details__info__item">
+            <mat-icon>schedule</mat-icon>
+            <span>{{ recipe.prepTimeMinutes }} min</span>
+          </div>
+          <div class="recipe-details__info__item">
+            <mat-icon>restaurant</mat-icon>
+            <span>Porcje: {{ recipe.servings }}</span>
+          </div>
+          <div class="recipe-details__info__item">
+            <mat-icon>category</mat-icon>
+            <span>{{ recipe.category.name }}</span>
+          </div>
+        </div>
+        <div class="recipe-details__ingredients">
+          <h2>Składniki</h2>
+          <ul>
+            @for (ingredient of recipe.ingredients; track $index) {
+              <li>{{ ingredient.ingredientName }} - {{ ingredient.amount }} {{ ingredient.measurementAbbr }}</li>
+            }
+          </ul>
+        </div>
+        <div class="recipe-details__steps">
+          <h2>Przygotowanie</h2>
+          @for (step of recipe.steps; track $index) {
+            <p>{{ step.stepNumber }}. {{ step.description }}</p>
+          }
+        </div>
+
+  
+        <div id="recipeButtons">
+          @if (recipe) {
+            @if (userService.isAuthenticated()) {
+              <button class="recipeButton" mat-raised-button [routerLink]="['/recipe', recipe.id, 'edit']">Edytuj przepis</button>
+              <app-delete-recipe [recipe]="recipe" class="recipeButton"></app-delete-recipe>
+            }
+          }
+        </div>
+        <div class="recipe-details__rating">
+            <h3>Oceń przepis</h3>
+  
+            <div class="recipe-details__reviews">
+              <ul>
+              <!-- @for (review of reviews; track review) {
+                  <li>
+                  <p>author rating</p>
+                  <p>content</p>
+                  </li>
+              } -->
+              </ul>
+          
+            </div>
+          </div>
+        <app-review-form (reviewEvent)="addReview($event)"></app-review-form>
+      </div>
+
+    }
+  </section>
