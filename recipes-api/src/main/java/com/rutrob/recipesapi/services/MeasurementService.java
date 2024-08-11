@@ -2,7 +2,7 @@ package com.rutrob.recipesapi.services;
 
 import com.rutrob.recipesapi.mappers.MeasurementMapper;
 import com.rutrob.recipesapi.repositories.MeasurementRepository;
-import com.rutrob.recipesapi.rest.dto.MeasurementDto;
+import com.rutrob.recipesapi.rest.dto.response.MeasurementDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

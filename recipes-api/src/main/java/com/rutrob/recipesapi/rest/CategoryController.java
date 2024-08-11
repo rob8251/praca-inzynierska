@@ -1,6 +1,6 @@
 package com.rutrob.recipesapi.rest;
 
-import com.rutrob.recipesapi.rest.dto.CategoryDto;
+import com.rutrob.recipesapi.rest.dto.response.CategoryDto;
 import com.rutrob.recipesapi.services.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

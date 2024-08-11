@@ -3,7 +3,7 @@ package com.rutrob.recipesapi.services;
 import com.rutrob.recipesapi.entities.Follow;
 import com.rutrob.recipesapi.repositories.FollowRepository;
 import com.rutrob.recipesapi.repositories.UserRepository;
-import com.rutrob.recipesapi.rest.dto.FollowRequest;
+import com.rutrob.recipesapi.rest.dto.request.FollowRequest;
 import com.rutrob.recipesapi.security.SecurityUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;

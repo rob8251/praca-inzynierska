@@ -1,7 +1,7 @@
 package com.rutrob.recipesapi.rest;
 
-import com.rutrob.recipesapi.rest.dto.IngredientRequest;
-import com.rutrob.recipesapi.rest.dto.IngredientDto;
+import com.rutrob.recipesapi.rest.dto.request.IngredientRequest;
+import com.rutrob.recipesapi.rest.dto.response.IngredientDto;
 import com.rutrob.recipesapi.services.IngredientService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

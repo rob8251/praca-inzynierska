@@ -1,8 +1,8 @@
 package com.rutrob.recipesapi.rest;
 
-import com.rutrob.recipesapi.rest.dto.CreateReviewRequest;
-import com.rutrob.recipesapi.rest.dto.ReviewDto;
-import com.rutrob.recipesapi.rest.dto.UpdateReviewRequest;
+import com.rutrob.recipesapi.rest.dto.request.CreateReviewRequest;
+import com.rutrob.recipesapi.rest.dto.response.ReviewDto;
+import com.rutrob.recipesapi.rest.dto.request.UpdateReviewRequest;
 import com.rutrob.recipesapi.security.SecurityUser;
 import com.rutrob.recipesapi.services.ReviewService;
 import jakarta.validation.Valid;

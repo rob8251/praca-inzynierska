@@ -1,8 +1,8 @@
 package com.rutrob.recipesapi.mappers;
 
-import com.rutrob.recipesapi.RecipeDto;
+import com.rutrob.recipesapi.rest.dto.response.RecipeDto;
 import com.rutrob.recipesapi.entities.Recipe;
-import com.rutrob.recipesapi.rest.dto.RecipeRequest;
+import com.rutrob.recipesapi.rest.dto.request.RecipeRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

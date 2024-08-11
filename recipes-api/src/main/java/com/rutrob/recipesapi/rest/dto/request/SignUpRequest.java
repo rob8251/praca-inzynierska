@@ -1,4 +1,4 @@
-package com.rutrob.recipesapi.rest.dto;
+package com.rutrob.recipesapi.rest.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

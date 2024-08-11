@@ -1,12 +1,12 @@
 package com.rutrob.recipesapi.services;
 
-import com.rutrob.recipesapi.RecipeDto;
+import com.rutrob.recipesapi.rest.dto.response.RecipeDto;
 import com.rutrob.recipesapi.entities.Recipe;
 import com.rutrob.recipesapi.entities.RecipeIngredients;
 import com.rutrob.recipesapi.entities.Step;
 import com.rutrob.recipesapi.mappers.RecipeMapper;
 import com.rutrob.recipesapi.repositories.*;
-import com.rutrob.recipesapi.rest.dto.RecipeRequest;
+import com.rutrob.recipesapi.rest.dto.request.RecipeRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

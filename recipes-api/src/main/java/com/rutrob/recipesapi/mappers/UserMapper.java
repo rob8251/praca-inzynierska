@@ -1,7 +1,7 @@
 package com.rutrob.recipesapi.mappers;
 
 import com.rutrob.recipesapi.entities.User;
-import com.rutrob.recipesapi.rest.dto.SignUpRequest;
+import com.rutrob.recipesapi.rest.dto.request.SignUpRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

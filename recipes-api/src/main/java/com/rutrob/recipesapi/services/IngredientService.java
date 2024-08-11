@@ -1,9 +1,9 @@
 package com.rutrob.recipesapi.services;
 
-import com.rutrob.recipesapi.rest.dto.IngredientRequest;
+import com.rutrob.recipesapi.rest.dto.request.IngredientRequest;
 import com.rutrob.recipesapi.mappers.IngredientMapper;
 import com.rutrob.recipesapi.repositories.IngredientRepository;
-import com.rutrob.recipesapi.rest.dto.IngredientDto;
+import com.rutrob.recipesapi.rest.dto.response.IngredientDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

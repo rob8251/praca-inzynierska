@@ -1,8 +1,8 @@
 package com.rutrob.recipesapi.rest;
 
-import com.rutrob.recipesapi.rest.dto.AuthResponse;
-import com.rutrob.recipesapi.rest.dto.LoginRequest;
-import com.rutrob.recipesapi.rest.dto.SignUpRequest;
+import com.rutrob.recipesapi.rest.dto.response.AuthResponse;
+import com.rutrob.recipesapi.rest.dto.request.LoginRequest;
+import com.rutrob.recipesapi.rest.dto.request.SignUpRequest;
 import com.rutrob.recipesapi.security.TokenProvider;
 import com.rutrob.recipesapi.services.UserService;
 import jakarta.validation.Valid;

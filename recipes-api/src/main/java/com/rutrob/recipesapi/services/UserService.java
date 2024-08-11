@@ -5,7 +5,7 @@ import com.rutrob.recipesapi.entities.User;
 import com.rutrob.recipesapi.mappers.UserMapper;
 import com.rutrob.recipesapi.repositories.RoleRepository;
 import com.rutrob.recipesapi.repositories.UserRepository;
-import com.rutrob.recipesapi.rest.dto.SignUpRequest;
+import com.rutrob.recipesapi.rest.dto.request.SignUpRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

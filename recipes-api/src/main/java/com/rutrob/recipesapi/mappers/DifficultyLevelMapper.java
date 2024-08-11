@@ -1,6 +1,6 @@
 package com.rutrob.recipesapi.mappers;
 
-import com.rutrob.recipesapi.rest.dto.DifficultyLevelRequest;
+import com.rutrob.recipesapi.rest.dto.request.DifficultyLevelRequest;
 import com.rutrob.recipesapi.entities.DifficultyLevel;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;

@@ -38,12 +38,12 @@ public class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
         cq.select(recipeRoot).distinct(true)
                 .where(builder.not(builder.exists(subquery)));
 
-        //return entityManager.createQuery(cq).getResultList();
         List<Recipe> result = entityManager.createQuery(cq)
                 .setFirstResult((int) pageable.getOffset())
                 .setMaxResults(pageable.getPageSize())
                 .getResultList();
 
+        // Count query
         CriteriaQuery<Long> countQuery = builder.createQuery(Long.class);
         Root<Recipe> countRoot = countQuery.from(Recipe.class);
 

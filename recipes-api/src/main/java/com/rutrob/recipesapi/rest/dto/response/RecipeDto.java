@@ -1,4 +1,4 @@
-package com.rutrob.recipesapi;
+package com.rutrob.recipesapi.rest.dto.response;
 
 import com.rutrob.recipesapi.entities.Category;
 import com.rutrob.recipesapi.entities.embeddable.RecipeIngredientsId;

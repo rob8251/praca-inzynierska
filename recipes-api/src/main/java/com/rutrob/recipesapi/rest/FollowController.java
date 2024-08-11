@@ -1,6 +1,6 @@
 package com.rutrob.recipesapi.rest;
 
-import com.rutrob.recipesapi.rest.dto.FollowRequest;
+import com.rutrob.recipesapi.rest.dto.request.FollowRequest;
 import com.rutrob.recipesapi.services.FollowService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

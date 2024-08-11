@@ -2,7 +2,7 @@ package com.rutrob.recipesapi.services;
 
 import com.rutrob.recipesapi.mappers.DifficultyLevelMapper;
 import com.rutrob.recipesapi.repositories.DifficultyLevelRepository;
-import com.rutrob.recipesapi.rest.dto.DifficultyLevelRequest;
+import com.rutrob.recipesapi.rest.dto.request.DifficultyLevelRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

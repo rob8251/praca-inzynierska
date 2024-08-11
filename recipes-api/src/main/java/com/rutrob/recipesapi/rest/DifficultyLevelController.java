@@ -1,6 +1,6 @@
 package com.rutrob.recipesapi.rest;
 
-import com.rutrob.recipesapi.rest.dto.DifficultyLevelRequest;
+import com.rutrob.recipesapi.rest.dto.request.DifficultyLevelRequest;
 import com.rutrob.recipesapi.services.DifficultyLevelService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
